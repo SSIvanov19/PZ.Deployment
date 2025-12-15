@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: pz-web
-        image: dressr/pz-web:latest
+        image: dressr/pz-web:prod-20251206-1506-294855c
         imagePullPolicy: Always
         ports:
           - name: http
