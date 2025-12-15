@@ -1,0 +1,8 @@
+namespace: pz-web
+
+resources:
+- pz-web
+- namespace.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true

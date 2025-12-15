@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pz-web
+  labels:
+    app: pz-web
+spec:
+  minReadySeconds: 60
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pz-web
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: pz-web
+    spec:
+      containers:
+      - name: pz-web
+        image: dressr/pz-web:latest
+        imagePullPolicy: Always
+        ports:
+          - name: http
+            containerPort: 80
+        envFrom:
+        - configMapRef:
+              name: pz-web-env
+      terminationGracePeriodSeconds: 180

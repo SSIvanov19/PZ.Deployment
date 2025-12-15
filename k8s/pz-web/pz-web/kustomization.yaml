@@ -1,0 +1,11 @@
+resources:
+- deployment.yaml
+- service.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+configMapGenerator:
+- name: pz-web-env
+  literals:
+    - NODE_ENV=production
